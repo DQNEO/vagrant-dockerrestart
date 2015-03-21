@@ -9,5 +9,5 @@ vagrant halt
 vagrant package
 vagrant box add mycentos7 package.box
 rm package.box
-vagrant destroy -f
 vagrant box list
+#vagrant destroy -f
