@@ -13,3 +13,8 @@ This Vagrantfile is to do initial provisioning.
 * install Chef omnubis latest version
 * do `yum update`
 
+# USAGE
+
+```
+make
+```
