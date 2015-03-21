@@ -10,4 +10,6 @@ vagrant package
 vagrant box add mycentos7 package.box
 rm package.box
 vagrant box list
-#vagrant destroy -f
+
+echo "if everything is ok, please 'vagrant destroy -f' manually"
+
