@@ -2,14 +2,14 @@
 
 Vagrant.configure(2) do |config|
 
-  # use chef official box (chef is not installed, though)
-  config.vm.box = "chef/centos-7.0"
-
-  # install chef
-  config.omnibus.chef_version = :latest
+  config.vm.box = "mycentos7"
 
   config.vm.provision "shell", inline: <<-SHELL
-    sudo yum -y update --exclude=kernel*
-    sudo yum -y install nano rsync
+    sudo yum -y install docker
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo docker pull mongo:3.0.0
+    sudo docker run -d --restart=always --name mongod -v /mnt/mongodata:/data/db -p 27017:27107 mongo
   SHELL
+
 end
